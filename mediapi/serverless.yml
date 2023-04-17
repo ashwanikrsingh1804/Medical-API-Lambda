@@ -1,0 +1,17 @@
+service: mediapi
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+
+
+functions:
+  hello:
+    handler: handler.server
+    events: 
+      - http:
+          path: /medicine
+          method: get
+          cors: true
